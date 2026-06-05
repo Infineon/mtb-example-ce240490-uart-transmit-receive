@@ -4,12 +4,12 @@ This code example demonstrates the UART (PDL) transmit and receive operations in
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-ce240490-uart-transmit-receive)
 
-[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyNDA0OTAiLCJTcGVjIE51bWJlciI6IjAwMi00MDQ5MCIsIkRvYyBUaXRsZSI6IlBETDogVUFSVCB0cmFuc21pdCBhbmQgcmVjZWl2ZSIsInJpZCI6ImpvYW4ubGluQGluZmluZW9uLmNvbSIsIkRvYyB2ZXJzaW9uIjoiMS4xLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
+[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyNDA0OTAiLCJTcGVjIE51bWJlciI6IjAwMi00MDQ5MCIsIkRvYyBUaXRsZSI6IlBETDogVUFSVCB0cmFuc21pdCBhbmQgcmVjZWl2ZSIsInJpZCI6ImpvYW4ubGluQGluZmluZW9uLmNvbSIsIkRvYyB2ZXJzaW9uIjoiMS4yLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
 
 
 ## Requirements
 
-- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.6 or later (tested with v3.6)
+- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.7 or later
 - Board support package (BSP) minimum required version:
     - KIT_PSC3M5_EVK - v1.0.3
     - KIT_XMC52_EVK – v1.0.0
@@ -28,6 +28,8 @@ This code example demonstrates the UART (PDL) transmit and receive operations in
 
 - [PSOC&trade; Control C3 Evaluation Kit](https://www.infineon.com/KIT_PSC3M5_EVK) (`KIT_PSC3M5_EVK`) – Default value of `TARGET`
 - [XMC5200 Evaluation Kit](https://www.infineon.com/evaluation-board/KIT-XMC52-EVK) (`KIT_XMC52_EVK`)
+- [KIT_PSC3M5_CC2 Motor Control Card](https://www.infineon.com/evaluation-board/KIT-PSC3M5-CC2) (`KIT_PSC3M5_CC2`)
+- [KIT_PSC3M5_CC2 Motor Control Card](https://www.infineon.com/evaluation-board/KIT-PSC3M5-CC1) (`KIT_PSC3M5_CC1`)
 
 
 
@@ -263,6 +265,7 @@ Document title: *CE240490* – *PDL: UART transmit and receive*
  ------- | ---------------------
  1.0.0   | New code example
  1.1.0   | Added support for KIT_XMC52_EVK 
+ 1.2.0   | Added support for KIT_PSC3M5_CC2 and KIT_PSC3M5_CC1
 <br>
 
 
