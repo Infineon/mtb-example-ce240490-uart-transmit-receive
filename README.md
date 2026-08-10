@@ -1,39 +1,40 @@
-# PDL: UART transmit and receive
+﻿# PDL: UART transmit and receive
 
 This code example demonstrates the UART (PDL) transmit and receive operations in Infineon's MCU. The application uses a serial terminal to read data and to echo back the received data. The UART resource is configured to transmit and receive operations.
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-ce240490-uart-transmit-receive)
 
-[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyNDA0OTAiLCJTcGVjIE51bWJlciI6IjAwMi00MDQ5MCIsIkRvYyBUaXRsZSI6IlBETDogVUFSVCB0cmFuc21pdCBhbmQgcmVjZWl2ZSIsInJpZCI6ImpvYW4ubGluQGluZmluZW9uLmNvbSIsIkRvYyB2ZXJzaW9uIjoiMS4yLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
+[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyNDA0OTAiLCJTcGVjIE51bWJlciI6IjAwMi00MDQ5MCIsIkRvYyBUaXRsZSI6IlBETDogVUFSVCB0cmFuc21pdCBhbmQgcmVjZWl2ZSIsInJpZCI6ImpvYW4ubGluQGluZmluZW9uLmNvbSIsIkRvYyB2ZXJzaW9uIjoiMS4zLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
 
 
 ## Requirements
 
-- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.7 or later
-- Board support package (BSP) minimum required version:
-    - KIT_PSC3M5_EVK - v1.0.3
-    - KIT_XMC52_EVK – v1.0.0
+- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.8 or later
+- Board support package (BSP) minimum required version for :
+   - KIT_PSC3M5_EVK: v1.0.3
+   - KIT_XMC52_EVK: v1.0.0
+   - KIT_PSC3M6_EVAL: v1.0.0
 - Programming language: C
-- Associated parts: PSOC&trade; C3 MCUs and [XMC5000 MCUs](https://www.infineon.com/products/microcontroller/32bit-industrial-arm-cortex-m/xmc5000)
+- Associated parts: PSOC&trade; Control C3 MCU Entry Line and PSOC&trade; Control C3 MCU Main Line parts
 
 
 ## Supported toolchains (make variable 'TOOLCHAIN')
 
 - GNU Arm&reg; Embedded Compiler v14.2.1 (`GCC_ARM`) – Default value of `TOOLCHAIN`
 - Arm&reg; Compiler v6.22 (`ARM`)
-- IAR C/C++ Compiler v9.50.2 (`IAR`)
+- IAR C/C++ Compiler v9.70.4 (`IAR`)
 
 
 ## Supported kits (make variable 'TARGET')
 
-- [PSOC&trade; Control C3 Evaluation Kit](https://www.infineon.com/KIT_PSC3M5_EVK) (`KIT_PSC3M5_EVK`) – Default value of `TARGET`
+- [PSOC&trade; Control C3M5 Evaluation Kit](https://www.infineon.com/evaluation-board/KIT-PSC3M5-EVK) (`KIT_PSC3M5_EVK`) – Default value of `TARGET`
 - [XMC5200 Evaluation Kit](https://www.infineon.com/evaluation-board/KIT-XMC52-EVK) (`KIT_XMC52_EVK`)
-- [KIT_PSC3M5_CC2 Motor Control Card](https://www.infineon.com/evaluation-board/KIT-PSC3M5-CC2) (`KIT_PSC3M5_CC2`)
-- [KIT_PSC3M5_CC2 Motor Control Card](https://www.infineon.com/evaluation-board/KIT-PSC3M5-CC1) (`KIT_PSC3M5_CC1`)
+- [PSOC&trade; Control C3M5 Digital Power Control Card](https://www.infineon.com/KIT_PSC3M5_CC1) (`KIT_PSC3M5_CC1`)
+- [PSOC&trade; Control C3M5 Motor Drive Control Card](https://www.infineon.com/KIT_PSC3M5_CC2) (`KIT_PSC3M5_CC2`)
+- [PSOC&trade; Control C3M6 Evaluation Kit](https://www.infineon.com/evaluation-board/KIT-PSC3M6-EVAL) (`KIT_PSC3M6_EVAL`)
 
 
-
-## Hardware setup
+## Hardware setup 
 
 This example uses the board's default configuration. See the kit user guide to ensure that the board is configured correctly.
 
@@ -42,7 +43,7 @@ This example uses the board's default configuration. See the kit user guide to e
 
 See the [ModusToolbox&trade; tools package installation guide](https://www.infineon.com/ModusToolboxInstallguide) for information about installing and configuring the tools package.
 
-Install a terminal emulator if you don't have one. Instructions in this document use [Tera Term](https://teratermproject.github.io/index-en.html).
+Install a terminal emulator if you do not have one. Instructions in this document use [Tera Term](https://teratermproject.github.io/index-en.html).
 
 
 
@@ -64,7 +65,7 @@ The ModusToolbox&trade; tools package provides the Project Creator as both a GUI
 
 3. On the **Select Application** page:
 
-   a. Select the **Applications(s) Root Path** and the **Target IDE**
+   a. Select the **Application(s) Root Path** and the **Target IDE**
 
       > **Note:** Depending on how you open the Project Creator tool, these fields may be pre-selected for you
 
@@ -158,9 +159,9 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
 
 ## Operation
 
-1. Connect the board to your PC using the provided USB cable through the KitProg3 USB connector
+1. Connect the board to your PC using the provided USB cable through the Debug USB connector on the board
 
-2. Open a terminal program and select the KitProg3 COM port. Set the serial port parameters to 8N1 and 115200 baud
+2. Open a terminal program and select the Virtual COM port. Set the serial port parameters to 8N1 and 115200 baud
 
 3. Program the board using one of the following:
 
@@ -168,7 +169,7 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
 
       1. Select the application project in the Project Explorer
 
-      2. In the **Quick Panel**, scroll down, and click **\<Application Name> Program (KitProg3_MiniProg4)**
+      2. In the **Quick Panel**, scroll down, and click **\<Application Name> Program (KitProg3_MiniProg4)** or **\<Application Name> Program (JLink)**
    </details>
 
 
@@ -192,7 +193,7 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
       ```
    </details>
 
-4. After programming, the application starts automatically. Confirm that "PDL: UART Transmit and Receive" is displayed on the UART terminal.
+4. After programming, the application starts automatically. Confirm that "PDL: UART Transmit and Receive" is displayed on the UART terminal
 
 5. Start typing to see the echo on the terminal:
 
@@ -208,7 +209,7 @@ You can debug the example to step through the code.
 
 <details><summary><b>In Eclipse IDE</b></summary>
 
-Use the **\<Application Name> Debug (KitProg3_MiniProg4)** configuration in the **Quick Panel**. For details, see the "Program and debug" section in the [Eclipse IDE for ModusToolbox&trade; user guide](https://www.infineon.com/MTBEclipseIDEUserGuide).
+Use the **\<Application Name> Debug (KitProg3_MiniProg4)** or **\<Application Name> Debug (JLink)** configuration in the **Quick Panel**. For details, see the "Program and debug" section in the [Eclipse IDE for ModusToolbox&trade; user guide](https://www.infineon.com/MTBEclipseIDEUserGuide).
 
 > **Note:** **(Only while debugging)** On the CM4 CPU, some code in `main()` may execute before the debugger halts at the beginning of `main()`. This means that some code executes twice – once before the debugger stops execution, and again after the debugger resets the program counter to the beginning of `main()`. See [KBA231071](https://community.infineon.com/docs/DOC-21143) to learn about this and for the workaround.
 
@@ -219,7 +220,6 @@ Use the **\<Application Name> Debug (KitProg3_MiniProg4)** configuration in the 
 
 Follow the instructions in your preferred IDE.
 </details>
-
 
 
 ## Design and implementation
@@ -242,12 +242,9 @@ One UART resource is configured to receive and send data to a terminal emulator.
 
 Resources  | Links
 -----------|----------------------------------
-Application notes  | [AN238329](https://www.infineon.com/AN238329) – Getting started with PSOC&trade; Control C3 MCU on ModusToolbox&trade; software <br> [AN241720](https://www.infineon.com/document-promo/infineon-an241720-getting-started-with-xmc5000-mcu-on-modustoolbox-software_1071f992-eb73-4dce-94ad-e84c41407bfc) – Getting started with XMC5000 MCU on ModusToolbox&trade; software
-Code examples  | [Using ModusToolbox&trade;](https://github.com/Infineon/Code-Examples-for-ModusToolbox-Software) on GitHub
-Device documentation | [PSOC&trade; Control C3 MCU datasheet](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/32-bit-psoc-control-arm-cortex-m33-mcu/psoc-control-c3p/#!documents) <br> [PSOC&trade; Control C3 technical reference manuals](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/32-bit-psoc-control-arm-cortex-m33-mcu/psoc-control-c3p/#!documents) <br> [XMC5000 MCUs documents](https://www.infineon.com/products/microcontroller/32bit-industrial-arm-cortex-m/xmc5000#Documents)
-Development kits | Select your kits from the [Evaluation board finder](https://www.infineon.com/cms/en/design-support/finder-selection-tools/product-finder/evaluation-board).
-Libraries on GitHub  | [mtb-pdl-cat1](https://github.com/Infineon/mtb-pdl-cat1) – Peripheral Driver Library (PDL) <br> [mtb-hal-psc3](https://github.com/Infineon/mtb-hal-psc3) – Hardware Abstraction Layer (HAL) library <br> [retarget-io](https://github.com/Infineon/retarget-io) – Utility library to retarget STDIO messages to a UART port
-Tools  | [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) – ModusToolbox&trade; is a collection of easy-to-use libraries and tools enabling rapid development with Infineon MCUs for applications ranging from wireless and cloud-connected systems, edge AI/ML, embedded sense and control, to wired USB connectivity using PSoC&trade; Industrial/IoT MCUs, AIROC&trade; Wi-Fi and Bluetooth&reg; connectivity devices, XMC&trade; Industrial MCUs, and EZ-USB&trade;/EZ-PD&trade; wired connectivity controllers. ModusToolbox&trade; incorporates a comprehensive set of BSPs, HAL, libraries, configuration tools, and provides support for industry-standard IDEs to fast-track your embedded application development.
+Documentation | [PSOC&trade; Control C3 MCU documents](https://documentation.infineon.com/psoccontrolc3/docs/kfc1732622054982)
+Development kits | [PSOC&trade; Control C3 development kits](https://documentation.infineon.com/psoccontrolc3/docs/yyw1732688626489)
+Tools, BSPs, libraries, and code examples | [ModusToolbox&trade;](https://documentation.infineon.com/modustoolbox/) – ModusToolbox&trade; software is a collection of easy-to-use libraries and tools enabling rapid development with Infineon MCUs for applications ranging from wireless and cloud-connected systems, edge AI/ML, embedded sense and control, to wired USB connectivity using PSoC&trade; Industrial/IoT MCUs, AIROC&trade; Wi-Fi and Bluetooth&reg; connectivity devices, XMC&trade; Industrial MCUs, and EZ-USB&trade;/EZ-PD&trade; wired connectivity controllers. ModusToolbox&trade; incorporates a comprehensive set of BSPs, HAL, libraries, configuration tools, and provides support for industry-standard IDEs to fast-track your embedded application development
 
 <br>
 
@@ -266,6 +263,7 @@ Document title: *CE240490* – *PDL: UART transmit and receive*
  1.0.0   | New code example
  1.1.0   | Added support for KIT_XMC52_EVK 
  1.2.0   | Added support for KIT_PSC3M5_CC2 and KIT_PSC3M5_CC1
+ 1.3.0   | Added KIT_PSC3M6_EVAL support
 <br>
 
 
@@ -277,7 +275,7 @@ PSOC&trade;, formerly known as PSoC&trade;, is a trademark of Infineon Technolog
 
 ---------------------------------------------------------
 
-(c) 2024-2025, Infineon Technologies AG, or an affiliate of Infineon Technologies AG. All rights reserved.
+(c) 2026, Infineon Technologies AG, or an affiliate of Infineon Technologies AG. All rights reserved.
 This software, associated documentation and materials ("Software") is owned by Infineon Technologies AG or one of its affiliates ("Infineon") and is protected by and subject to worldwide patent protection, worldwide copyright laws, and international treaty provisions. Therefore, you may use this Software only as provided in the license agreement accompanying the software package from which you obtained this Software. If no license agreement applies, then any use, reproduction, modification, translation, or compilation of this Software is prohibited without the express written permission of Infineon.
 <br>
 Disclaimer: UNLESS OTHERWISE EXPRESSLY AGREED WITH INFINEON, THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, ALL WARRANTIES OF NON-INFRINGEMENT OF THIRD-PARTY RIGHTS AND IMPLIED WARRANTIES SUCH AS WARRANTIES OF FITNESS FOR A SPECIFIC USE/PURPOSE OR MERCHANTABILITY. Infineon reserves the right to make changes to the Software without notice. You are responsible for properly designing, programming, and testing the functionality and safety of your intended application of the Software, as well as complying with any legal requirements related to its use. Infineon does not guarantee that the Software will be free from intrusion, data theft or loss, or other breaches (“Security Breaches”), and Infineon shall have no liability arising out of any Security Breaches. Unless otherwise explicitly approved by Infineon, the Software may not be used in any application where a failure of the Product or any consequences of the use thereof can reasonably be expected to result in personal injury.

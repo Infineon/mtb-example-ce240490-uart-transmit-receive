@@ -104,7 +104,7 @@ INCLUDES=
 DEFINES=
 
 # Select softfp or hardfp floating point. Default is softfp.
-VFP_SELECT=softfloat
+VFP_SELECT=
 
 # Additional / custom C compiler flags.
 #
@@ -141,6 +141,10 @@ PREBUILD=
 # Custom post-build commands to run.
 POSTBUILD=
 
+ifneq ($(findstring PSC3M6,$(TARGET)),)
+# Config file for postbuild sign, relocate and merge operations.
+COMBINE_SIGN_JSON?=configs/signer_combiner.json
+endif
 
 ################################################################################
 # Paths
